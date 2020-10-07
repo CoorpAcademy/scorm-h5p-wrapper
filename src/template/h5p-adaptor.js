@@ -63,7 +63,8 @@ var onCompleted = function (result) {
 }
 
 H5P.externalDispatcher.on('xAPI', function (event) {
-  console.log('xAPI event: ' + JSON.stringify(event));
+  console.log('xAPI event: ' + JSON.stringify(event, null, 2));
+  H5P.jQuery(window).trigger('resize');
   if (event.data.statement.result) {
     onCompleted(event.data.statement.result);
   }
