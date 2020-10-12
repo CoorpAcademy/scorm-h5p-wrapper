@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "copy-h5p-standalone": "cp -R node_modules/h5p-standalone/dist/* src/template",
+    "copy-h5p-standalone": "cp -R node_modules/h5p-standalone/dist/* src/template && sed -i '' 's/externalEmbed = false;/externalEmbed = true;/g' src/template/frame.bundle.js && sed -i '' 's/externalEmbed = false;/externalEmbed = true;/g' src/template/main.bundle.js && more static/h5p-coorp.css >> src/template/styles/h5p.css",
     "start": "node ./src/index.js"
   },
   "repository": {
