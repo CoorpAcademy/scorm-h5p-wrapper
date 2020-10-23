@@ -17,12 +17,12 @@ var creator = async (outputDir, h5pContentDir, tempDir, masteryScore) => {
     masteryScore = 100;
   }
   await fs.remove(tempDir);
-  await fs.copy(templateDir, tempDir, {
+  await fs.copy(h5pContentDir, tempDir + "/workspace", {
     errorOnExist: false,
     overwrite: true,
     recursive: true
   });
-  await fs.copy(h5pContentDir, tempDir + "/workspace", {
+  await fs.copy(templateDir, tempDir, {
     errorOnExist: false,
     overwrite: true,
     recursive: true
